@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "View";
+}
+
+<div class="container" style="display: inline-block;">
+    <div><img src="@Model.image" width="100%" style="padding: 1%; margin-top: 5%; border-radius: 10px;" alt="@Model.flavor" /></div>
+    @{
+        var truncatedText = Model.flavor;
+        if (truncatedText.Length > 20)
+        {
+            truncatedText = truncatedText.Substring(0, 20) + "....";
+        }
+        <h5 class="text-blue text-center">@Model.flavor</h5>
+    }
+    
+   @*<h5 class="text-white">$@Model.Price</h5> <a class="btn zesty-button" asp-controller="Home" asp-action="ProductDetails" asp-route-id="@Model.ProductId"
+      asp-route-returnUrl="@ViewContext.HttpContext.Request.PathAndQuery()">Product Details</a> *@
+
+    <br />
+</div>
+

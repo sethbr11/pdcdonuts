@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "DONUTS PAGE";
+}
+@model List<Donuts>
+
+<div class="text-center">
+    <h1 class="display-4">DONUTS</h1>
+    <p>Daily selection varies by shop</p>
+</div>
+
+<div class="menu-options">
+    <div class="type-button">ALL</div>
+    <div class="type-button">ICED</div>
+    <div class="type-button">GLAZED</div>
+    <div class="type-button">FILLED</div>
+    <div class="type-button">CAKE</div>
+    <div class="type-button">CHOCOLATE</div>
+</div>
+
+<div class="row">
+@if (Model is null){
+    <p>There seems to have been an error! Sorry about that. Console yourself with a donut (donuts sold separately). </p>
+}
+else{
+@foreach (var p in Model)
+{
+    <div class="col-3">
+        <partial name="DonutCard" model="p" />
+    </div>
+    
+}}
+</div>
+
+
+<script>
+    function onSelect() {
+
+    }
+</script>
